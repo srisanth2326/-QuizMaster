@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #e0e5ec;
+  --shadow-raised: 6px 6px 12px #b8bec7, -6px -6px 12px #ffffff;
+  --shadow-inset: inset 6px 6px 12px #b8bec7, inset -6px -6px 12px #ffffff;
+  --shadow-raised-sm: 4px 4px 8px #b8bec7, -4px -4px 8px #ffffff;
+  --shadow-inset-sm: inset 4px 4px 8px #b8bec7, inset -4px -4px 8px #ffffff;
+  --accent: #6c63ff;
+  --accent-light: #857eff;
+  --success: #43e97b;
+  --danger: #ff6584;
+  --text: #4a5568;
+  --text-dark: #2d3748;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+}
+
+/* Custom utilities for neomorphism */
+.neo-raised {
+  background-color: var(--bg);
+  box-shadow: var(--shadow-raised);
+}
+
+.neo-inset {
+  background-color: var(--bg);
+  box-shadow: var(--shadow-inset);
+}
+
+.neo-raised-sm {
+  background-color: var(--bg);
+  box-shadow: var(--shadow-raised-sm);
+}
+
+.neo-inset-sm {
+  background-color: var(--bg);
+  box-shadow: var(--shadow-inset-sm);
+}
+
+/* Button utility with transition */
+.neo-btn {
+  background-color: var(--bg);
+  box-shadow: var(--shadow-raised);
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+}
+.neo-btn:hover {
+  box-shadow: var(--shadow-inset);
+}
+.neo-btn:active {
+  box-shadow: var(--shadow-inset);
+}
+
+/* Primary Button utility */
+.neo-btn-primary {
+  background-color: var(--accent);
+  color: white;
+  box-shadow: 6px 6px 12px rgba(108, 99, 255, 0.35), -6px -6px 12px #ffffff;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+}
+.neo-btn-primary:hover {
+  background-color: #5b53e6;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2), inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+}
+.neo-btn-primary:active {
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Secondary Button (danger/clear) */
+.neo-btn-danger {
+  background-color: var(--danger);
+  color: white;
+  box-shadow: 6px 6px 12px rgba(255, 101, 132, 0.35), -6px -6px 12px #ffffff;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+}
+.neo-btn-danger:hover {
+  background-color: #e05472;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2), inset -4px -4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Inset Input fields */
+.neo-input {
+  background-color: var(--bg);
+  box-shadow: var(--shadow-inset);
+  color: var(--text-dark);
+  border: none;
+  outline: none;
+  border-radius: 16px;
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+}
+.neo-input:focus {
+  box-shadow: inset 5px 5px 10px #aab0bb, inset -5px -5px 10px #ffffff;
+}
+
+/* Interactive Pill toggles */
+.neo-pill {
+  box-shadow: var(--shadow-raised-sm);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border-radius: 9999px;
+  background-color: var(--bg);
+}
+.neo-pill.active {
+  box-shadow: var(--shadow-inset-sm);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Scrollbar styling for a cleaner look */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #c5cbd5;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #aeb5c2;
+}
