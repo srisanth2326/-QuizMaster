@@ -2,11 +2,18 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QuizProvider } from './context/QuizContext';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import QuizConfig from './pages/QuizConfig';
 import QuizPlay from './pages/QuizPlay';
 import Results from './pages/Results';
 import Leaderboard from './pages/Leaderboard';
+import About from './pages/About';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import FAQ from './pages/FAQ';
+import TriviaGuides from './pages/TriviaGuides';
+import GuideDetail from './pages/GuideDetail';
 
 export default function App() {
   return (
@@ -24,15 +31,20 @@ export default function App() {
               <Route path="/quiz/play" element={<QuizPlay />} />
               <Route path="/quiz/results" element={<Results />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/guides" element={<TriviaGuides />} />
+              <Route path="/guides/:category" element={<GuideDetail />} />
             </Routes>
           </main>
 
-          {/* Footer */}
-          <footer className="py-6 text-center text-xs font-semibold text-neo-text border-t border-gray-200/20">
-            © {new Date().getFullYear()} QuizMaster • Designed in Neomorphism UI System
-          </footer>
+          {/* Modular Footer */}
+          <Footer />
         </div>
       </Router>
     </QuizProvider>
   );
 }
+
